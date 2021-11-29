@@ -14,3 +14,9 @@ def test_exists():
     """ Program exists """
 
     assert os.path.isfile(PRG)
+
+# --------------------------------------------------
+def test_input():
+    """ ensure the game gives back the initial string to begin """
+
+    
