@@ -29,22 +29,31 @@ def get_args():
 
 
 # --------------------------------------------------
-def memgame(a_str):
-    """"""
+def test_input():
+    """ensure the game gives back the initial string to begin"""
+    args = get_args
+    if len(args.string) != 4:
+        assert print(f'Input string must be 4 characters long')
 
-    # carriage return: \r (character returns to beginning of line after print)
+# --------------------------------------------------
+def memgame(a_str):
+    """given good input, the program will generate 
+        a new str on a new line and blank out the old string"""
+
     all_chars = a_str
     letters = string.ascii_lowercase
-    
+
     while True:
-        usr_input = input(a_str + ' ')
-        if usr_input != all_chars:
-            print('You failed!')
-            break
-        new_chars = ''.join([random.choice(letters) for i in range(4)])
+        usr_input = input(a_str + ' ')  # include a space between strings
+        if usr_input != all_chars:  # if user input doesn't equal the strings, print the fail message
+            print('LOL, You failed!')
+            break  # exit loop
+        new_chars = ''.join([random.choice(letters) for i in range(4)
+                             ])  # generate random str of 4 chars
         a_str = new_chars
-        all_chars += ' ' + new_chars
-        os.system('cls' if os.name == 'nt' else 'clear')
+        all_chars += ' ' + new_chars  # join the old and new strings, w/ space between
+        os.system('cls' if os.name == 'nt' else
+                  'clear')  # clear the old line in terminal so users wont see
 
 
 # --------------------------------------------------
