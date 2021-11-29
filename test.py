@@ -2,7 +2,7 @@
 
 from subprocess import getstatusoutput
 import os
-Import re
+import re
 
 
 PRG = './memory.py'
