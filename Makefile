@@ -1,2 +1,2 @@
 test:
-	pytest -xv --pylint --flake8 test.py ./memory.py
+	pytest -xv --pylint test.py ./memory.py
