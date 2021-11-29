@@ -97,12 +97,6 @@ def main():
     args = get_args()
     memgame(args.string)
 
-    # printing lowercase
-    #letters = string.ascii_lowercase
-    #print ( ''.join(random.choice(letters) for i in range(10)) )
-    #for args.positional:
-    #   print(args.positional) if args.positional is > str[:6]
-
 
 # --------------------------------------------------
 if __name__ == '__main__':
