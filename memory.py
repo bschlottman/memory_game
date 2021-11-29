@@ -5,7 +5,10 @@ Date   : 2021-11-16
 Purpose: test your memory
 """
 
-import argparse, os, random, string
+import argparse
+import os
+import random
+import string
 
 
 # --------------------------------------------------
@@ -23,8 +26,7 @@ def get_args():
     args = parser.parse_args()
 
     if len(args.string) != 4:
-        parser.error(f'Input string must be 4 characters long')
-
+        parser.error('Input string must be 4 characters long')
     return args
 
 
@@ -33,11 +35,12 @@ def test_input():
     """ensure the game gives back the initial string to begin"""
     args = get_args
     if len(args.string) != 4:
-        assert print(f'Input string must be 4 characters long')
+        assert print('Input string must be 4 characters long')
+
 
 # --------------------------------------------------
 def memgame(a_str):
-    """given good input, the program will generate 
+    """given good input, the program will generate
         a new str on a new line and blank out the old string"""
 
     all_chars = a_str
@@ -45,7 +48,7 @@ def memgame(a_str):
 
     while True:
         usr_input = input(a_str + ' ')  # include a space between strings
-        if usr_input != all_chars:  # if user input doesn't equal the strings, print the fail message
+        if usr_input != all_chars:  # if user input != the strings, print the fail message
             print('LOL, You failed!')
             break  # exit loop
         new_chars = ''.join([random.choice(letters) for i in range(4)
@@ -58,7 +61,7 @@ def memgame(a_str):
 
 # --------------------------------------------------
 def main():
-    """bring in a new random string on a new line, 
+    """bring in a new random string on a new line,
         & replace old line with | | | | |, keeping line position"""
 
     args = get_args()
