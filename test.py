@@ -24,21 +24,3 @@ def test_usage():
         rv, out = getstatusoutput('{} {}'.format(PRG, flag))
         assert rv == 0
         assert re.match("usage", out, re.IGNORECASE)
-
-
-# --------------------------------------------------
-def test_no_args():
-    """ Dies on no args """
-
-    rv, out = getstatusoutput(PRG)
-    assert rv != 0
-    assert re.match("usage", out, re.IGNORECASE)
-
-
-# --------------------------------------------------
-def test_missing_input():
-    """ Dies on missing input """
-
-    rv, out = getstatusoutput('{} -c codons.RNA'.format(PRG))
-    assert rv != 0
-    assert re.match("usage", out, re.IGNORECASE)
